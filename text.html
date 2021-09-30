@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery</title>
+  <script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(function(){
+      $("p").click(function(){
+        alert($(this).text());
+      });
+    });
+
+    window.onload=function(){
+
+    }
+    window.onload = function(){
+
+      var item=document.getElementById("tb");
+      var tbody=item.getElementsByTagName("tbody")[0];
+      var trs=tbody.getElementsByTagName("tr");
+      for(var i=0;i<trs.length;i++){
+        if(i%2==0){
+          trs[i].style.backgroundColor="red";
+        }
+      }
+
+      var btn = document.getElementById("btn");
+      btn.onclick = function(){
+        var array = new Array();
+        var items = document.getElementsByName("check");
+        for(var i = 0; i < items.length; i++){
+          if(items[i].checked){
+            array.push(items[i].value);
+          }
+
+        }
+        alert("选中的个数为：" + array.length);
+      }
+    }
+
+  </script>
+
+</head>
+<body>
+  <p>段落1</p>
+  <p>段落2</p>
+
+  <table id="tb" border="1">
+    <tbody>
+    <tr><td>第一行</td></tr>
+    <tr><td>第二行</td></tr>
+    <tr><td>第三行</td></tr>
+    <tr><td>第四行</td></tr>
+    <tr><td>第五行</td></tr>
+    <tr><td>第六行</td></tr>
+    </tbody>
+  </table>
+
+  <input type="checkbox" name="check" value="1" checked="checked" />
+  <input type="checkbox" name="check" value="2" />
+  <input type="checkbox" name="check" value="3" checked="checked" />
+  <input type="button" id="btn" value="你选中的个数" />
+</body>
+
+</body>
+</html>
